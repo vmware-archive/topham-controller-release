@@ -1,0 +1,36 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/topham_controller
+LOG_DIR=/var/vcap/sys/log/topham_controller
+PIDFILE=${RUN_DIR}/controller.pid
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+
+    echo $$ > $PIDFILE
+
+    cd /var/vcap/packages/topham_controller/bin/
+
+    export PATH=/var/vcap/packages/ruby_1.9.3/bin:$PATH
+
+    exec /var/vcap/packages/topham_controller/bin/topham_controller \
+      --username=<%= properties.username %> \
+      --password=<%= properties.password %> \
+      --port=<%= properties.port %> \
+      >> $LOG_DIR/topham_controller.log 2>&1
+
+    ;;
+
+  stop)
+    kill -9 `cat $PIDFILE`
+    rm -f $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac

@@ -1,0 +1,9 @@
+---
+name: topham_controller
+
+dependencies:
+- go
+
+files:
+- github.com/pivotal-cf-experimental/topham-controller/*.go
+- github.com/pivotal-cf-experimental/topham-controller/*/*.go

@@ -1,0 +1,16 @@
+---
+name: topham-controller
+
+packages:
+ - topham_controller
+
+templates:
+  topham_controller_ctl.erb: bin/topham_controller_ctl
+
+properties:
+  username:
+    description: Username for accessing the controller
+  password:
+    description: Password for accessing the controller
+  port:
+    description: Web port for controller to bind to
