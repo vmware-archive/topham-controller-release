@@ -1,0 +1,3 @@
+[submodule "src/github.com/pivotal-cf-experimental/topham-controller"]
+	path = src/github.com/pivotal-cf-experimental/topham-controller
+	url = git@github.com:pivotal-cf-experimental/topham-controller.git
