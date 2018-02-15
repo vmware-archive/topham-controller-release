@@ -6,4 +6,13 @@ dependencies:
 
 files:
 - github.com/pivotal-cf-experimental/topham-controller/*.go
+- github.com/pivotal-cf-experimental/topham-controller/api/*.go
+- github.com/pivotal-cf-experimental/topham-controller/store/*.go
+- github.com/pivotal-cf-experimental/topham-controller/vendor/code.cloudfoundry.org/lager/*.go
 - github.com/pivotal-cf-experimental/topham-controller/*/*.go
+- github.com/pivotal-cf-experimental/topham-controller/vendor/github.com/golang/glog/*.go
+- github.com/pivotal-cf-experimental/topham-controller/vendor/github.com/gorilla/mux/*.go
+- github.com/pivotal-cf-experimental/topham-controller/vendor/github.com/pivotal-cf/brokerapi/*.go
+- github.com/pivotal-cf-experimental/topham-controller/vendor/github.com/pivotal-cf/brokerapi/auth/*.go
+- github.com/pivotal-cf-experimental/topham-controller/vendor/github.com/pmorie/go-open-service-broker-client/v2/*.go
+

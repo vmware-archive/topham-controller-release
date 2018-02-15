@@ -1,0 +1,39 @@
+---
+name: topham
+
+releases:
+- name: topham-controller
+  version: latest
+
+stemcells:
+- alias: bosh-warden-boshlite-ubuntu-trusty-go_agent
+  os: ubuntu-trusty
+  version: latest
+
+instance_groups:
+- name: topham-controller
+  azs: [z1]
+  stemcell: bosh-warden-boshlite-ubuntu-trusty-go_agent
+  networks:
+  - name: default
+    default: [dns, gateway]
+  vm_type: minimal
+  instances: 1
+  jobs:
+  - name: topham-controller
+    release: topham-controller
+  properties:
+    username: admin
+    password: foo
+    port: 8080
+    broker_username: admin
+    broker_password: password
+    broker_url: http://unwive-overview-broker.hate-skinner.sapi.cf-app.com
+
+update:
+  canaries: 1
+  canary_watch_time: "30000-300000"
+  update_watch_time: "30000-300000"
+  max_in_flight: 1
+  max_errors: 2
+  serial: true

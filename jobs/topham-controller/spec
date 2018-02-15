@@ -14,3 +14,9 @@ properties:
     description: Password for accessing the controller
   port:
     description: Web port for controller to bind to
+  broker_url:
+    description: URL of the broker
+  broker_username:
+    description: Username for the broker
+  broker_password:
+    description: Password for the broker

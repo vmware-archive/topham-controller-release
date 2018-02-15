@@ -1,5 +1,5 @@
 check process topham_controller
-  with pidfile /var/vcap/sys/run/topham_controller.pid
+  with pidfile /var/vcap/sys/run/topham_controller/controller.pid
   start program "/var/vcap/jobs/topham-controller/bin/topham_controller_ctl start"
   stop program "/var/vcap/jobs/topham-controller/bin/topham_controller_ctl stop"
   group vcap

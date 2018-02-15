@@ -16,10 +16,11 @@ case $1 in
 
     export PATH=/var/vcap/packages/ruby_1.9.3/bin:$PATH
 
-    exec /var/vcap/packages/topham_controller/bin/topham_controller \
-      --username=<%= properties.username %> \
-      --password=<%= properties.password %> \
-      --port=<%= properties.port %> \
+    BROKER_USERNAME=<%= properties.broker_username %> \
+    BROKER_PASSWORD=<%= properties.broker_password %> \
+    BROKER_URL=<%= properties.broker_url %> \
+    PORT=<%= properties.port %> \
+    exec chpst -u vcap:vcap /var/vcap/packages/topham_controller/bin/topham-controller \
       >> $LOG_DIR/topham_controller.log 2>&1
 
     ;;
