@@ -11,3 +11,7 @@ A spike exploring a possible implementation of a 'services controller', i.e. a s
 Deploy as a BOSH release, ensuring the details of the downstream broker have been set in the manifest ([example](https://github.com/pivotal-cf-experimental/topham-controller-release/blob/master/manifest.yml)).
 
 To connect and provision services, a CLI is provided: see our forked [eden-cli](https://github.com/pivotal-cf-experimental/eden/tree/spike-services-controller-client).
+
+## Caveats ⚠️
+
+**Do not use in production**. Please see the Caveats section [here](https://github.com/pivotal-cf-experimental/topham-controller/blob/master/README.md).
